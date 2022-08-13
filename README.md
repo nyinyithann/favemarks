@@ -8,6 +8,10 @@ Please run the following script to install it.
 ```bash
 curl -fsSL https://github.com/nyinyithann/favemarks/raw/main/script/install.sh | bash
 ```
+If above script doesnt' work, please try this.
+```bash
+curl -fsSL https://github.com/nyinyithann/favemarks/raw/main/script/install.sh
+```
 ## Getting Started
 1. After installing Favemarks, you first need to create a database to store bookmarks.<br/>**Please note that the path must be absolute.**
 ```bash

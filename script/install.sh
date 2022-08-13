@@ -3,26 +3,6 @@
 set -e
 
 INSTALL_DIR="/usr/local/bin"
-RELEASE="latest"
-
-# Parse Flags
-parse_args() {
-  while [[ $# -gt 0 ]]; do
-    key="$1"
-
-    case $key in
-    -r | --release)
-      RELEASE="$2"
-      shift # past release argument
-      shift # past release value
-      ;;
-    *)
-      echo "Unrecognized argument $key"
-      exit 1
-      ;;
-    esac
-  done
-}
 
 set_filename() {
   local OS
@@ -40,11 +20,7 @@ set_filename() {
 }
 
 download_spin() {
-  if [ "$RELEASE" == "latest" ]; then
-    URL=https://github.com/nyinyithann/favemarks/releases/latest/download/$FILENAME.zip
-  else
-    URL=https://github.com/nyinyithann/favemarks/releases/download/v$RELEASE/$FILENAME.zip
-  fi
+  URL=https://github.com/nyinyithann/favemarks/releases/download/0.0.1/$FILENAME.zip
 
   DOWNLOAD_DIR=$(mktemp -d)
 
@@ -87,7 +63,6 @@ check_dependencies() {
   fi
 }
 
-parse_args "$@"
 set_filename
 check_dependencies
 download_spin
