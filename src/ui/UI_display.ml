@@ -5,9 +5,10 @@ let success_icon = "✅"
 let fail_icon = "🌶 "
 let noti_icon = "🟠"
 let new_line () = printf "\n%!"
+let with_cyan msg = T.sprintf [ T.Foreground T.Cyan ] "%s" msg
+let with_blue msg = T.sprintf [ T.Foreground T.Blue ] "%s" msg
 let with_error_style msg = T.sprintf [ T.Foreground T.Red ] "%s" msg
 let with_ok_style msg = T.sprintf [ T.Foreground T.Green ] "%s" msg
-let with_cyan msg = T.sprintf [ T.Foreground T.Cyan ] "%s" msg
 
 let print_ok_msg msg =
   print_string (with_ok_style @@ sprintf "\n%s  %s\n%!" success_icon msg)
@@ -81,15 +82,15 @@ let show_status_info ~state =
     | Some s -> sprintf "\n%s %s" (with_ok_style "♨︎") s
     | None -> ""
   in
-  T.print_string
-    [ T.Foreground T.Blue ]
-    (sprintf
+  print_string
+  @@ with_blue
+  @@ sprintf
        "%s  %s  %s\n%s%s\n\n%!"
        current_page_status
        total_search_count_status
        total_count_status
        mode_status
-       status_msg)
+       status_msg
 ;;
 
 let display_table state =
