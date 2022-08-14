@@ -1,6 +1,7 @@
 (executable
  (name main)
  (public_name fm)
+ ; (flags (:standard -cclib -static))
  (package fm)
  (libraries core_compat sqlite3 ANSITerminal re unix textutils.ascii_table yojson tyxml)
  (preprocess (pps ppx_jane))
