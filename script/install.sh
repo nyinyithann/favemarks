@@ -3,9 +3,9 @@
 set -e
 
 INSTALL_DIR="/usr/local/bin"
+OS=""
 
 set_filename() {
-  local OS
 
   OS=$(uname -s)
 
@@ -36,7 +36,7 @@ download_spin() {
   fi
 
   unzip -q "$DOWNLOAD_DIR/$FILENAME.zip" -d "$DOWNLOAD_DIR"
-  mv "$DOWNLOAD_DIR/main.exe" "$INSTALL_DIR/fm"
+  sudo mv "$DOWNLOAD_DIR/main.exe" "$INSTALL_DIR/fm"
   chmod u+x "$INSTALL_DIR/fm"
 }
 
