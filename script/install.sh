@@ -11,6 +11,7 @@ set_filename() {
 
   if [ "$OS" == "Linux" ]; then
     FILENAME="fm-linux-x64"
+    INSTALL_DIR="/usr/bin"
   elif [ "$OS" == "Darwin" ]; then
     FILENAME="fm-darwin-x64"
   else
