@@ -4,7 +4,7 @@
 ![image](/docs/main.png)
 ## Installation
 Favemarks is tested on MacOS and Ubuntu. Windows is not supported 😎.<br/>
-Please run the following script to install it.
+Please run the following script to install it. You will be asked to provide admin password to actually install it.
 ```bash
 curl -fsSL https://github.com/nyinyithann/favemarks/raw/main/script/install.sh | bash
 ```
@@ -21,6 +21,13 @@ curl -fsSL https://github.com/nyinyithann/favemarks/raw/main/script/install.sh |
  $ fm ls
 ``` 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Initally you would see a blank table with menus, and if you add some records, you would see something like this.<br/>
+
+**NOTE**<br/>
+_If you don't see the below screen after running `fm ls` command. You might probably need to install SQlite to your machine. Favemarks uses SQlite to manage the data._
+
+_For Ubuntu user, please run  `sodo apt install sqlite3`._<br/>
+_For Mac use, please run `brew install sqlite3`._
+
 ![Image](/docs/fmls.png)
 - Press `a` to add a new record.
 - Press `u` to update and existing record.
